@@ -14,13 +14,14 @@ client_t client;
 
 int main(int argc, char *argv[]){
 
+    return 0;
     // read name of server and name of user from command line args
-    sprintf(client.to_client_fname, "%s", argv[1]); // fifo named after name put after server input
-    sprintf(client.to_server_fname, "%s", argv[0]); // fifo named after name put after server input
+    //sprintf(client.to_client_fname, "%s", argv[1]); // fifo named after name put after server input
+    //sprintf(client.to_server_fname, "%s", argv[0]); // fifo named after name put after server input
 
     // create to-server and to-client FIFOs
-    mkfifo(client.to_client_fname, S_IRUSR | S_IWUSR);  //create to-server
-    mkfifo(client.to_server_fname, S_IRUSR);    //to-client FIFOs
+    //mkfifo(client.to_client_fname, S_IRUSR | S_IWUSR);  //create to-server
+    //mkfifo(client.to_server_fname, S_IRUSR);    //to-client FIFOs
 
     // write a join_t request to the server FIFO
     // write(client.to_server_fd, &request, sizeof(join_t));

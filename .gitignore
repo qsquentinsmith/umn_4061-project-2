@@ -1,0 +1,7 @@
+*.o
+*.json
+bl_client
+bl_server
+test-data/*.out
+test-data/*.diff
+test-data/*.expect

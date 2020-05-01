@@ -22,8 +22,9 @@ util.o : util.c blather.h
 simpio.o : simpio.c blather.h
 	$(CC) -c simpio.c
 
+.PHONY : clean
 clean:
-	rm -f blather *.o
+	rm -f bl_client bl_server blather *.o
 
 #------------ Taken from project 1 to make zip
 # clean :

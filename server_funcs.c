@@ -6,7 +6,6 @@ Implement the functions in this file to manipulate the server_t and client_t dat
 
 #include "blather.h"
 
-
 client_t *server_get_client(server_t *server, int idx);
 // Gets a pointer to the client_t struct at the given index. If the
 // index is beyond n_clients, the behavior of the function is
