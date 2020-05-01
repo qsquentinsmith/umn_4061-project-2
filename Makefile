@@ -2,24 +2,28 @@ CFLAGS = -Wall -g
 CC	   = gcc $(CFLAGS)
 include test_Makefile
 
-all : server_func.o bl_server.o bl_client.o util.o simpio.o
-	$(CC) -o server_func.o bl_server.o bl_client.o util.o simpio.o
+blather : server_funcs.o bl_server.o bl_client.o util.o simpio.o
+	$(CC) -o bl_server server_funcs.o bl_server.o util.o
+	$(CC) -o bl_client bl_client.o simpio.o
+	@echo blather is ready
 
-util.o : util.c
-	$(CC) -c util.c
-
-server_func.o : server_funcs.c
+server_funcs.o : server_funcs.c blather.h
 	$(CC) -c server_funcs.c
 
-bl_server.o : bl_server.c
+bl_server.o : bl_server.c blather.h
 	$(CC) -c bl_server.c
 
-bl_client.o : bl_client.c
+bl_client.o : bl_client.c blather.h
 	$(CC) -c bl_client.c
 
-simpio.o : simpio.c
+util.o : util.c blather.h
+	$(CC) -c util.c
+
+simpio.o : simpio.c blather.h
 	$(CC) -c simpio.c
 
+clean:
+	rm -f blather *.o
 
 #------------ Taken from project 1 to make zip
 # clean :
