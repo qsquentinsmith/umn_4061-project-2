@@ -7,6 +7,6 @@ Main function for bl_client executable
 Main function for bl_server executable
 - Implement the server which manages the interactions between clients in this file making use of the service functions in server_funcs.c to get the job done.
 
-Service routines for the server
-data structure manipulations
-Implement the functions in this file to manipulate the server_t and client_t data that will ultimately be used by the server to fulfill its role.
+Service routines for the server - data structure manipulations
+- Implement the functions in this file to manipulate the server_t and client_t data that will ultimately be used by the server to fulfill its role.
+
